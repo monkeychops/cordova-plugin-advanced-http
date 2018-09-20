@@ -252,7 +252,7 @@ abstract class CordovaHttp {
         response.put("url", request.url().toString());
         this.addResponseHeaders(request, response);
 
-        if (code >= 200 && code < 300) {
+        if (code >= 200 && code < 308) {
             response.put("data", decodeBody(rawOutputReference, request.charset()));
             this.getCallbackContext().success(response);
         } else {
